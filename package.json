@@ -66,5 +66,9 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "dog-names": "^2.0.0"
   }
 }

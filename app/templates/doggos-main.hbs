@@ -1,0 +1,32 @@
+{{page-title 'DoggosMain'}}
+<h2>To choose your perfect dog name filter by breed or view random images from
+  every breed</h2>
+<h3>If you see a name you like then click the image to see more dogs with the
+  same name</h3>
+<h4>You can add a name to your favourites list to look back at later</h4>
+<Doggos @model={{@model}}/>
+
+{{!-- <div class='field'>
+
+  <label class='label'>Select breed</label>
+  <div class='control'>
+    <div class='select is-rounded'>
+      <select {{ on "change" this.test }}>
+        <option>Select breed</option>
+        {{#each @model.breeds as |breed|}}
+          <option >{{breed}} </option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+</div>
+{{#each @model.doggos as |doggo|}}
+  <Dog @doggo={{doggo}} />
+{{/each}} --}}
+
+
+{{!-- {{#each @model.doggoNames as |doggoName|}}
+<h5>{{doggoName}}</h5>
+{{/each}} --}}
+
+{{!-- {{outlet}} --}}

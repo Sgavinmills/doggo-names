@@ -1,0 +1,40 @@
+<div class='field'>
+
+  <label class='label'>Select breed</label>
+  <div class='control'>
+    <div class='select is-rounded'>
+      <select {{ on "change" this.updateFilter }}>
+        <option value="none">Select breed - Any</option>
+        {{#each @model.breeds as |breed|}}
+          <option value={{breed}} >{{breed}} </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{#if this.filtered}}
+    <div class='select is-rounded'>
+      <select {{ on "change" this.updateGender }}>
+        <option value="none">Choose gender - Any</option>
+        <option value="boy">Boy doggos</option>
+        <option value="girl">Girl doggos</option>
+      </select>
+    </div>
+    {{/if}}
+  </div>
+</div>
+<div class="doggos-container">
+
+
+    {{#if this.filtered}}
+    {{#each this.doggos as |doggo|}}
+    <Dog @doggo={{doggo}} />
+    {{/each}}
+    <button {{ on "click" this.loadMoreDogs }} class="button is-info">Load more dogs</button>
+    {{else}}
+    {{#each @model.doggos as |doggo|}}
+    <Dog @doggo={{doggo}} />
+    {{/each}}
+    <button class="button is-info">Refresh for more random dogs</button>
+    {{/if}}
+
+</div>
